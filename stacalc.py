@@ -1,7 +1,6 @@
 #This code is to evaluate the expression if it containd brackets"()"
 
 #!/usr/bin/python
-expr=""
 class stack:
 	def __init__(self):
 		self.items=[]
