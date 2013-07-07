@@ -1,3 +1,7 @@
+#This code looks after the GUI part
+
+#To evaluate the given expression, it calls the "calc" function in the "op" file
+
 #!usr/bin/python
 import op 
 from gi.repository import Gtk
@@ -63,13 +67,14 @@ neg._value='-'
 opbr._value='('
 clbr._value=')'
 point._value='.'
-buttonlist=[zero,one,two,three,four,five,six,seven,eight,nine,point,add,sub,mul,div,opbr,clbr]
+buttonlist=[zero,one,two,three,four,five,six,seven,eight,nine,point,add,sub,mul,div,opbr,clbr,neg]
 for button in buttonlist:
 	button.connect("clicked",x.buttonclicked)
 equ.connect("clicked",x.equalclicked)
 back.connect("clicked",x.back)
 clear.connect("clicked",x.clear)
-table.attach(tb,0,5,0,1)
+table.attach(tb,0,4,0,1)
+table.attach(clear,4,5,0,1)
 table.attach(seven,0,1,1,2)
 table.attach(eight,1,2,1,2)
 table.attach(nine,2,3,1,2)

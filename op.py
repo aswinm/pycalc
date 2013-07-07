@@ -1,3 +1,8 @@
+#This code is used to work on with the evaluation of the given arithmetic expression
+
+
+
+#!/usr/bin/python
 import stacalc as st
 class stack:
 	def __init__(self):
