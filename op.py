@@ -17,8 +17,8 @@ class stack:
 		return self.items[-1]
 numeric=stack()
 operator=stack()
-precedence={'*':1,'/':1,'+':2,'-':2}
-oper=['*','/','+','-']
+precedence={'*':1,'/':1,'+':2,'-':2,'^':0}
+oper=['*','/','+','-','^']
 
 def find():
 	a=numeric.pop()
@@ -32,6 +32,8 @@ def find():
 		numeric.push(a+b)
 	elif c=='-':
 		numeric.push(b-a)
+	elif c=='^':
+		numeric.push(b**a)
 
 def calc(expr):
 	num=""
@@ -57,6 +59,7 @@ def calc(expr):
 				else:
 					numeric.push(eval(num))
 				if i=='-':
+				
 					num='-'
 					i='+'
 				else:

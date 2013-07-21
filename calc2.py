@@ -50,6 +50,7 @@ equ=Gtk.Button(label='=')
 clear=Gtk.Button(label='C')
 neg=Gtk.Button(label='+/-')
 opbr=Gtk.Button(label='(')
+exp=Gtk.Button(label='^')
 clbr=Gtk.Button(label=')')
 point=Gtk.Button(label='.')
 back=Gtk.Button(label='<-')
@@ -57,6 +58,7 @@ buttons=[zero,one,two,three,four,five,six,seven,eight,nine]
 for i in range(len(buttons)):
 	buttons[i]._value=str(i)
 nine._value='9'
+exp._value='^'
 add._value='+'
 sub._value='-'
 mul._value='*'
@@ -67,13 +69,14 @@ neg._value='-'
 opbr._value='('
 clbr._value=')'
 point._value='.'
-buttonlist=[zero,one,two,three,four,five,six,seven,eight,nine,point,add,sub,mul,div,opbr,clbr,neg]
+buttonlist=[zero,one,two,three,four,five,six,seven,eight,nine,point,add,sub,mul,div,opbr,clbr,neg,exp]
 for button in buttonlist:
 	button.connect("clicked",x.buttonclicked)
 equ.connect("clicked",x.equalclicked)
 back.connect("clicked",x.back)
 clear.connect("clicked",x.clear)
-table.attach(tb,0,4,0,1)
+table.attach(tb,0,3,0,1)
+table.attach(exp,3,4,0,1)
 table.attach(clear,4,5,0,1)
 table.attach(seven,0,1,1,2)
 table.attach(eight,1,2,1,2)

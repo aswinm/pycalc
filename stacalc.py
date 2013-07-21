@@ -56,6 +56,8 @@ def find():
 		f=a*c
 	if b=="/":
 		f=c/a
+	if b=='^':
+		f=c**a
 	return f
 x=stack()
 	
